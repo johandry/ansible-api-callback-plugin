@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  ansible: 
+    image: williamyeh/ansible:ubuntu16.04
+    container_name: ansible
+    entrypoint: ansible-playbook
+    command: -i inventory playbook.yaml
+    working_dir: /ansible/playbooks
+    expose:
+      - 8086
+    ports:
+      - "8086:8086"
+    volumes: 
+      - ./playbooks:/ansible/playbooks
+    environment:
+      ANSIBLE_ROLES_PATH: /ansible/playbooks/roles
+      ANSIBLE_SSH_PIPELINING: "true"
+
