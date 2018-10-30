@@ -1,0 +1,4 @@
+---
+gopath: /root/go
+src_dir: "{{ gopath }}/src/github.com/{{ owner }}/{{ bin_name }}"
+gobin: /usr/local/go/bin/go 

@@ -1,0 +1,14 @@
+---
+
+- name: Creates source directory
+  file: 
+    path: "{{ src_dir }}"
+    state: directory
+
+- name: Copy Go code to GOPATH/src directory
+  copy:
+    src: "{{ role_path }}/files/"
+    dest: "{{ src_dir }}/"
+
+- name: Building the service
+  shell: "{{ gobin }} build -o /{{ bin_name }} {{ src_dir }}/."

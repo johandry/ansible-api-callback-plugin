@@ -1,0 +1,10 @@
+galaxy_info:
+  author: Johandry Amador
+  description: Ansible role to execute a Go program
+  license:
+    - MIT
+  min_ansible_version: 1.2
+  galaxy_tags:
+dependencies: 
+  - "go/install"
+  - "go/build"
